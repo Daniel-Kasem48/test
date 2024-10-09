@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeormConfigService } from './persistence/typeorm-config.service';
 import { GeolocationModule } from './geolocation/geolocation.module';
 import { environment } from '../environments/environment';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { environment } from '../environments/environment';
       load: [() => environment],
       isGlobal: true,
     }),
+    MailModule,
     TypeOrmModule.forRootAsync({
       useClass: TypeormConfigService,
     }),

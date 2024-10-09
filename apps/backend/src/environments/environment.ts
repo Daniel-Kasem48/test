@@ -5,17 +5,7 @@ export const environment = {
   port: process.env.PORT || 3001,
   nodeEnv: process.env.NODE_ENV || 'development',
   paths: {
-    seed: {
-      images: process.env.SEED_IMAGES_PATH || 'assets/seed/images',
-      templates: process.env.SEED_TEMPLATES_PATH || 'assets/seed/templates',
-    },
-    mailImages: process.env.MAIL_IMAGES_PATH || 'assets/mail',
-    integrationImages:
-      process.env.INTEGRATION_IMAGES_PATH || 'assets/integration',
-    tenantImages: process.env.TENANT_IMAGES_PATH || 'assets/tenant',
-    resourceImages: process.env.RESOURCE_IMAGES_PATH || 'assets/resource',
     templates: process.env.EMAIL_TEMPLATES_PATH || 'assets/templates',
-    static: process.env.STATIC_PATH || '/static',
   },
   database: {
     type: 'postgres',
@@ -37,7 +27,7 @@ export const environment = {
       pass: process.env.MAIL_PASSWORD,
     },
     from: {
-      name: process.env.MAIL_FROM_NAME || 'Spantrek',
+      name: process.env.MAIL_FROM_NAME || 'IT-Plus',
       address: process.env.MAIL_FROM_ADDRESS,
     },
   },
