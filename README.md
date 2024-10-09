@@ -61,7 +61,7 @@ Make sure to replace sensitive information like passwords and API keys before us
 
 1. Clone the repository:
    ```bash
-   git clone https://gitlab.com/spectrum1/test-nest.git
+   git clone https://github.com/Daniel-Kasem48/test.git
    ```
 
 2. Install the dependencies:
@@ -80,11 +80,6 @@ yarn migration:run
 
 You can run the backend server in development mode using the following command:
 
-```bash
-nx run backend:serve
-```
-
-or
 
 ```bash
 npx nx run backend:serve
