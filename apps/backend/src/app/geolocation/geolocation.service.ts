@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import axios from 'axios';
 
 import { Address } from '../persistence/entities/address';
 
@@ -27,6 +28,17 @@ export class GeolocationService {
     record.extractCoordinates()
 
     return record
+  }
+
+  async fetchGeoLocationFromThirdParty(addressAsString:string){
+      const response = await axios.get(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(addressAsString)}&format=json`);
+      if (response.data.length === 0) {
+        throw new HttpException('No geolocation data found for the given address.',400);
+      }
+
+      const { lat, lon } = response.data[0]; // Get the first result
+      const geolocation = { lat: lat, long: lon };
+      return geolocation
   }
 
   private getGeolocationPoint(lat: number, long: number): string {

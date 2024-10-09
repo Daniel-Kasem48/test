@@ -1,13 +1,14 @@
 import {
   AfterLoad,
   Column,
-  Entity
+  Entity, Index
 } from 'typeorm';
 import { BaseEntity } from './base.entity';
 
 @Entity()
 export class Address extends BaseEntity {
   @Column({length:"255"})
+  @Index("address_value_unique",{unique:true})
   value: string;
 
   @Column({
