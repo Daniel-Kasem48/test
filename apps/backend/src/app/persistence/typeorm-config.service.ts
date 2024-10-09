@@ -21,13 +21,14 @@ const Entities = [];
 
 @Injectable()
 export class TypeormConfigService implements TypeOrmOptionsFactory {
-  constructor(private readonly configService: ConfigService) {}
+  constructor
+  (
+    private readonly configService: ConfigService) {}
 
   public createTypeOrmOptions(): TypeOrmModuleOptions {
     const { host, port, database, username, password } =
       this.configService.get<DatabaseConfig>('database');
 
-    console.log(this.configService.get<DatabaseConfig>('database'));
     return {
       type: 'mysql', // Changed to 'mysql' to use the MySQL driver
       host: host?.split(':')[0],

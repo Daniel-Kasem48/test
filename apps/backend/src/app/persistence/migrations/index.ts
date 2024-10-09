@@ -1,5 +1,5 @@
-import { Migrations1728464808973 } from './1728464808973-migrations';
+import { Migrations1728465538880 } from './1728465538880-migrations';
 
 export const MIGRATIONS = [
-  Migrations1728464808973
+  Migrations1728465538880
 ];
