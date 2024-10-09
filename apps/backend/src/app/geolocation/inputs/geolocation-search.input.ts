@@ -3,7 +3,7 @@ import { ApiPropertyOptional, ApiProperty } from '@nestjs/swagger';
 
 
 export class GeolocationSearchInput {
-  @ApiProperty({ description: 'The address to search for', example: 'Damstraat 43' })
+  @ApiProperty({ description: 'The address to search for',required:true, example: 'Damstraat 43' })
   @IsString()
   @IsNotEmpty()
   address: string;
