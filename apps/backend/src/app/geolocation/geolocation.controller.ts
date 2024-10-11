@@ -27,10 +27,6 @@ export class GeolocationController {
 
   let responseToSend:GeolocationSearchResultDto
   if (addressRecord) {
-    if (email) {
-      const mail=new GeolocationSearchResultMailTemplate(email,addressRecord.value,addressRecord.latitude,addressRecord.longitude);
-      await this.mailSenderService.dispatch(mail);
-    }
     responseToSend={ latitude: addressRecord.latitude, longitude: addressRecord.longitude }
   }
 
